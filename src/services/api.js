@@ -17,8 +17,8 @@ export async function getUser(username) {
   return response.json();
 }
 
-export async function getUserFollowers(username) {
-  const response = await fetch(`${API_BASE_URL}users/${username}/followers`, { headers: getHeaders() });
+export async function getUserFollowers(username, page = 1) {
+  const response = await fetch(`${API_BASE_URL}users/${username}/followers?page=${page}`, { headers: getHeaders() });
   checkStatus(response);
   return response.json();
 }

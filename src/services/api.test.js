@@ -35,10 +35,10 @@ describe('api', () => {
 
     beforeEach(() => {
       FetchMock
-        .get(`${API_BASE_URL}/cvinson/followers`, successResponse, {
+        .get(`${API_BASE_URL}/cvinson/followers?page=1`, successResponse, {
           headers: { 'Accept': 'application/vnd.github.v3+json' }
         })
-        .get(`${API_BASE_URL}/aUserThatDoesNotExist/followers`, 404)
+        .get(`${API_BASE_URL}/aUserThatDoesNotExist/followers?page=1`, 404)
         .catch(404);
     });
 
@@ -52,7 +52,7 @@ describe('api', () => {
 
     test('sends the appropariate Accept headers', async () => {
       await getUserFollowers('cvinson');
-      expect(FetchMock.called(`${API_BASE_URL}/cvinson/followers`)).toBeTruthy();
+      expect(FetchMock.called(`${API_BASE_URL}/cvinson/followers?page=1`)).toBeTruthy();
     });
 
     afterEach(FetchMock.restore);
