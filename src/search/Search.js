@@ -3,17 +3,16 @@ import PropTypes from 'prop-types';
 import { InfiniteLoader, List } from 'react-virtualized';
 import Avatar from 'material-ui/Avatar';
 import { ListItem } from 'material-ui/List';
-import { getUser, getUserFollowers } from '../services/api';
 
 class Search extends Component {
   static propTypes = {
-    match: PropTypes.object.isRequired
+    getUser: PropTypes.func.isRequired,
+    getUserFollowers: PropTypes.func.isRequired,
+    username: PropTypes.string.isRequired
   }
 
   constructor(props) {
     super(props);
-
-    this.username = props.match.params.username;
     this.state = {
       isLoadingFollowers: true,
       isLoadingUser: true,
@@ -23,9 +22,9 @@ class Search extends Component {
   }
 
   async componentWillMount() {
-    const user = await getUser(this.username);
+    const user = await this.props.getUser(this.props.username);
     this.setState({ isLoadingUser: false, user });
-    const followers = await getUserFollowers(this.username);
+    const followers = await this.props.getUserFollowers(this.props.username);
     this.setState({ isLoadingFollowers: false, followers });
   }
 
@@ -33,16 +32,19 @@ class Search extends Component {
 
   loadMoreRows = async ({ startIndex, stopIndex }) => {
     const nextPage = Math.ceil(this.state.followers.length / 30) + 1;
-    const additionalFollowers = await getUserFollowers(this.username, nextPage);
+    const additionalFollowers = await this.props.getUserFollowers(this.props.username, nextPage);
     this.setState({ followers: [...this.state.followers, ...additionalFollowers] });
   }
 
   rowRenderer = ({ key, index, isScrolling, isVisible, style }) => {
     const follower = this.state.followers[index];
+    const avatarUrl = new URL(follower['avatar_url']);
+    avatarUrl.searchParams.set('s', 40);
+    console.log('AVATAR', avatarUrl.toString());
     return (
       <ListItem
         key={key}
-        leftAvatar={<Avatar src={follower['avatar_url']} />}
+        leftAvatar={<Avatar src={avatarUrl} />}
         primaryText={follower.login}
         style={style} />
     );
@@ -60,6 +62,7 @@ class Search extends Component {
         <InfiniteLoader
           isRowLoaded={this.isRowLoaded}
           loadMoreRows={this.loadMoreRows}
+          minimumBatchSize={30}
           rowCount={this.state.user.followers}>
           {({ onRowsRendered, registerChild }) => (
             <List
