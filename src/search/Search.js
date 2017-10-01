@@ -40,7 +40,6 @@ class Search extends Component {
     const follower = this.state.followers[index];
     const avatarUrl = new URL(follower['avatar_url']);
     avatarUrl.searchParams.set('s', 40);
-    console.log('AVATAR', avatarUrl.toString());
     return (
       <ListItem
         key={key}
