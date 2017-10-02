@@ -2,13 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Search from './Search';
 import { getUser, getUserFollowers } from '../services/api';
+import './Search.css';
 
 const SearchContainer = ({ match }) => {
   return (
-    <Search
-      getUser={getUser}
-      getUserFollowers={getUserFollowers}
-      username={match.params.username} />
+    <div className="searchContainer">
+      <Search
+        className="searchContainer"
+        getUser={getUser}
+        getUserFollowers={getUserFollowers}
+        username={match.params.username} />
+    </div>
   );
 };
 

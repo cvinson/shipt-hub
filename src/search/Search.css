@@ -1,0 +1,9 @@
+.searchContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search {
+  max-width: 300px;
+}

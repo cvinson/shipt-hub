@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { InfiniteLoader, List } from 'react-virtualized';
+import Paper from 'material-ui/Paper';
 import Follower from '../follower/Follower';
 import User from '../user/User';
 
@@ -57,7 +58,7 @@ class Search extends Component {
     }
 
     return (
-      <div>
+      <Paper className="search">
         <User {...this.state.user} />
         <InfiniteLoader
           isRowLoaded={this.isRowLoaded}
@@ -75,7 +76,7 @@ class Search extends Component {
               rowRenderer={this.rowRenderer} />
           )}
         </InfiniteLoader>
-      </div>
+      </Paper>
     );
   }
 }
