@@ -6,6 +6,8 @@ import Paper from 'material-ui/Paper';
 import Follower from '../follower/Follower';
 import User from '../user/User';
 
+const PAGE_SIZE = 30;
+
 class Search extends Component {
   static propTypes = {
     getUser: PropTypes.func.isRequired,
@@ -28,12 +30,12 @@ class Search extends Component {
     });
   }
 
-  componentWillMount() {
-    this.fetchUserData(this.props.username);
+  componentDidMount() {
+    return this.fetchUserData(this.props.username);
   }
 
   componentWillReceiveProps(nextProps) {
-    if(this.props.username !== nextProps.username) {
+    if (this.props.username !== nextProps.username) {
       this.fetchUserData(nextProps.username);
     }
   }
@@ -41,7 +43,7 @@ class Search extends Component {
   isRowLoaded = ({ index }) => index < this.state.followers.length;
 
   loadMoreRows = async ({ startIndex, stopIndex }) => {
-    const nextPage = Math.ceil(this.state.followers.length / 30) + 1;
+    const nextPage = Math.ceil(this.state.followers.length / PAGE_SIZE) + 1;
     const additionalFollowers = await this.props.getUserFollowers(this.props.username, nextPage);
     this.setState({ followers: [...this.state.followers, ...additionalFollowers] });
   }
@@ -64,7 +66,7 @@ class Search extends Component {
         <InfiniteLoader
           isRowLoaded={this.isRowLoaded}
           loadMoreRows={this.loadMoreRows}
-          minimumBatchSize={30}
+          minimumBatchSize={PAGE_SIZE}
           rowCount={this.state.user.followers}>
           {({ onRowsRendered, registerChild }) => (
             <List
