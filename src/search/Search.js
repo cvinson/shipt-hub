@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { InfiniteLoader, List } from 'react-virtualized';
-import Avatar from 'material-ui/Avatar';
-import { ListItem } from 'material-ui/List';
+import Follower from '../follower/Follower';
+import User from '../user/User';
 
 class Search extends Component {
   static propTypes = {
@@ -34,18 +34,12 @@ class Search extends Component {
     this.setState({ followers: [...this.state.followers, ...additionalFollowers] });
   }
 
-  rowRenderer = ({ key, index, isScrolling, isVisible, style }) => {
-    const follower = this.state.followers[index];
-    const avatarUrl = new URL(follower['avatar_url']);
-    avatarUrl.searchParams.set('s', 40);
-    return (
-      <ListItem
-        key={key}
-        leftAvatar={<Avatar src={avatarUrl} />}
-        primaryText={follower.login}
-        style={style} />
-    );
-  }
+  rowRenderer = ({ key, index, isScrolling, isVisible, style }) => (
+    <Follower
+      key={key}
+      style={style}
+      {...this.state.followers[index]} />
+  );
 
   render() {
     if (!this.state.user) {
@@ -54,8 +48,7 @@ class Search extends Component {
 
     return (
       <div>
-        <h2>{this.state.user.name}</h2>
-        <p>{this.state.user.followers}</p>
+        <User {...this.state.user} />
         <InfiniteLoader
           isRowLoaded={this.isRowLoaded}
           loadMoreRows={this.loadMoreRows}

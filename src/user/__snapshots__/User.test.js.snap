@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<User /> correctly displays singular follower count 1`] = `
+<Card
+  expandable={false}
+  expanded={null}
+  initiallyExpanded={false}
+>
+  <CardHeader
+    avatar="anAvatarUrl"
+    subtitle="1 Follower"
+    title="aGithubUser"
+  />
+</Card>
+`;
+
+exports[`<User /> renders without crashing 1`] = `
+<Card
+  expandable={false}
+  expanded={null}
+  initiallyExpanded={false}
+>
+  <CardHeader
+    avatar="anAvatarUrl"
+    subtitle="255 Followers"
+    title="aGithubUser"
+  />
+</Card>
+`;

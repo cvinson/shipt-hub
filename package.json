@@ -5,6 +5,7 @@
   "dependencies": {
     "fetch-mock": "^5.12.2",
     "material-ui": "^0.19.2",
+    "plur": "^2.1.2",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-router-dom": "^4.2.2",
