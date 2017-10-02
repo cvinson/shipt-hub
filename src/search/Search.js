@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { InfiniteLoader, List } from 'react-virtualized';
+import CircularProgress from 'material-ui/CircularProgress';
 import Paper from 'material-ui/Paper';
 import Follower from '../follower/Follower';
 import User from '../user/User';
@@ -54,7 +55,7 @@ class Search extends Component {
 
   render() {
     if (!this.state.user) {
-      return <div>Loading</div>;
+      return <CircularProgress size={80} />;
     }
 
     return (
