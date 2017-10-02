@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import sinon from 'sinon';
 import toJson from 'enzyme-to-json';
 import Search from './Search';
 
@@ -8,10 +7,8 @@ describe('Search', () => {
   let getUserSuccess, getUserFollowersSuccess;
 
   beforeAll(() => {
-    getUserSuccess = sinon.stub();
-    getUserSuccess.resolves({ name: 'githubUser' });
-    getUserFollowersSuccess = sinon.stub();
-    getUserFollowersSuccess.resolves([{ login: 'anotherGithubUser' }]);
+    getUserSuccess = jest.fn(() => Promise.resolve({ name: 'githubUser' }));
+    getUserFollowersSuccess = jest.fn(() => Promise.resolve([{ login: 'anotherGithubUser' }]));
   });
 
   it('renders without crashing', () => {
@@ -25,7 +22,7 @@ describe('Search', () => {
   });
 
   afterEach(() => {
-    getUserSuccess.reset();
-    getUserFollowersSuccess.reset();
+    getUserSuccess.mockClear();
+    getUserFollowersSuccess.mockClear();
   });
 });
