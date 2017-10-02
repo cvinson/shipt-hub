@@ -1,35 +1,40 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Follower /> renders correctly 1`] = `
-<ListItem
-  autoGenerateNestedIndicator={true}
-  containerElement="span"
-  disableKeyboardFocus={false}
-  disabled={false}
-  initiallyOpen={false}
-  insetChildren={false}
-  leftAvatar={
-    <Avatar
-      size={40}
-      src="https://avatars1.githubusercontent.com/u/590431?v=4"
-    />
-  }
-  nestedItems={Array []}
-  nestedLevel={0}
-  onKeyboardFocus={[Function]}
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
-  onNestedListToggle={[Function]}
-  onTouchEnd={[Function]}
-  onTouchStart={[Function]}
-  open={null}
-  primaryText="cvinson"
-  primaryTogglesNestedList={false}
-  secondaryTextLines={1}
-  style={
-    Object {
-      "color": "green",
+<Link
+  replace={false}
+  to="/cvinson"
+>
+  <ListItem
+    autoGenerateNestedIndicator={true}
+    containerElement="span"
+    disableKeyboardFocus={false}
+    disabled={false}
+    initiallyOpen={false}
+    insetChildren={false}
+    leftAvatar={
+      <Avatar
+        size={40}
+        src="https://avatars1.githubusercontent.com/u/590431?v=4"
+      />
     }
-  }
-/>
+    nestedItems={Array []}
+    nestedLevel={0}
+    onKeyboardFocus={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    onNestedListToggle={[Function]}
+    onTouchEnd={[Function]}
+    onTouchStart={[Function]}
+    open={null}
+    primaryText="cvinson"
+    primaryTogglesNestedList={false}
+    secondaryTextLines={1}
+    style={
+      Object {
+        "color": "green",
+      }
+    }
+  />
+</Link>
 `;

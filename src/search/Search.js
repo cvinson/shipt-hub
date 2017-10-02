@@ -19,11 +19,21 @@ class Search extends Component {
     };
   }
 
-  async componentWillMount() {
+  fetchUserData = async (username) => {
     this.setState({
-      followers: await this.props.getUserFollowers(this.props.username),
-      user: await this.props.getUser(this.props.username)
+      followers: await this.props.getUserFollowers(username),
+      user: await this.props.getUser(username)
     });
+  }
+
+  componentWillMount() {
+    this.fetchUserData(this.props.username);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if(this.props.username !== nextProps.username) {
+      this.fetchUserData(nextProps.username);
+    }
   }
 
   isRowLoaded = ({ index }) => index < this.state.followers.length;
