@@ -14,18 +14,16 @@ class Search extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoadingFollowers: true,
-      isLoadingUser: true,
-      followers: [],
+      followers: null,
       user: null
     };
   }
 
   async componentWillMount() {
-    const user = await this.props.getUser(this.props.username);
-    this.setState({ isLoadingUser: false, user });
-    const followers = await this.props.getUserFollowers(this.props.username);
-    this.setState({ isLoadingFollowers: false, followers });
+    this.setState({
+      followers: await this.props.getUserFollowers(this.props.username),
+      user: await this.props.getUser(this.props.username)
+    });
   }
 
   isRowLoaded = ({ index }) => index < this.state.followers.length;
@@ -50,14 +48,14 @@ class Search extends Component {
   }
 
   render() {
-    if (this.state.isLoadingUser) {
+    if (!this.state.user) {
       return <div>Loading</div>;
     }
 
     return (
       <div>
-        <h2>{this.state.isLoadingUser ? 'Loading' : this.state.user.name}</h2>
-        {!this.state.isLoadingUser && <p>{this.state.user.followers}</p>}
+        <h2>{this.state.user.name}</h2>
+        <p>{this.state.user.followers}</p>
         <InfiniteLoader
           isRowLoaded={this.isRowLoaded}
           loadMoreRows={this.loadMoreRows}
