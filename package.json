@@ -26,5 +26,13 @@
     "jest-enzyme": "^4.0.0",
     "react-test-renderer": "^16.0.0",
     "sinon": "^4.0.0"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!src/index.js",
+      "!src/testPolyfills.js",
+      "!src/setupTests.js"
+    ]
   }
 }
