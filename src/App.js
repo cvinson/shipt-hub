@@ -6,8 +6,11 @@ import './App.css';
 
 export default () => (
   <MuiThemeProvider>
-    <Router>
-      <Route path="/:username" component={SearchContainer} />
-    </Router>
+    <div className="main">
+      <img className="logo" src="/shipt-hub-logo.png" alt="ShiptHub"/>
+      <Router>
+        <Route path="/:username" component={SearchContainer} />
+      </Router>
+    </div>
   </MuiThemeProvider>
 );
