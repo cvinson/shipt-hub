@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search renders correctly 1`] = `
+<div
+  className="searchContainer"
+>
+  <Search
+    className="searchContainer"
+    getUser={[Function]}
+    getUserFollowers={[Function]}
+    username="githubUser"
+  />
+</div>
+`;
