@@ -1,7 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Search renders without crashing 1`] = `
-<div>
-  Loading
-</div>
+<CircularProgress
+  max={100}
+  min={0}
+  mode="indeterminate"
+  size={80}
+  thickness={3.5}
+  value={0}
+/>
 `;

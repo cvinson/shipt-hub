@@ -2,11 +2,20 @@
 
 exports[`<App /> renders correctly 1`] = `
 <MuiThemeProvider>
-  <BrowserRouter>
-    <Route
-      component={[Function]}
-      path="/:username"
+  <div
+    className="main"
+  >
+    <img
+      alt="ShiptHub"
+      className="logo"
+      src="/shipt-hub-logo.png"
     />
-  </BrowserRouter>
+    <BrowserRouter>
+      <Route
+        component={[Function]}
+        path="/:username"
+      />
+    </BrowserRouter>
+  </div>
 </MuiThemeProvider>
 `;
