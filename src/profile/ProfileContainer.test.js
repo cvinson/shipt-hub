@@ -1,12 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import SearchContainer from './SearchContainer';
+import ProfileContainer from './ProfileContainer';
 
-describe('Search', () => {
+describe('Profile', () => {
   it('renders correctly', () => {
     const wrapper = shallow(
-      <SearchContainer history={{}} match={{ params: { username: 'githubUser' } }} />
+      <ProfileContainer history={{}} match={{ params: { username: 'githubUser' } }} />
     );
     expect(toJson(wrapper)).toMatchSnapshot();
   });

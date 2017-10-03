@@ -45,7 +45,8 @@ exports[`<Follower /> renders correctly 1`] = `
           disabled={false}
           iconStyle={Object {}}
           onClick={[Function]}
-          tooltipPosition="bottom-center"
+          tooltip="Open on Github"
+          tooltipPosition="bottom-left"
           touch={false}
         >
           <ContentLink />
@@ -211,7 +212,8 @@ exports[`<Follower /> renders correctly 1`] = `
                         "top": 4,
                       }
                     }
-                    tooltipPosition="bottom-center"
+                    tooltip="Open on Github"
+                    tooltipPosition="bottom-left"
                     touch={false}
                   >
                     <EnhancedButton
@@ -306,6 +308,68 @@ exports[`<Follower /> renders correctly 1`] = `
                             onTouchEnd={[Function]}
                             onTouchStart={[Function]}
                           >
+                            <Tooltip
+                              horizontalPosition="left"
+                              label="Open on Github"
+                              show={false}
+                              style={
+                                Object {
+                                  "boxSizing": "border-box",
+                                }
+                              }
+                              touch={false}
+                              verticalPosition="bottom"
+                            >
+                              <div
+                                style={
+                                  Object {
+                                    "borderRadius": 2,
+                                    "boxSizing": "border-box",
+                                    "color": "#ffffff",
+                                    "fontFamily": "Roboto, sans-serif",
+                                    "fontSize": "10px",
+                                    "left": null,
+                                    "lineHeight": "22px",
+                                    "muiPrepared": true,
+                                    "opacity": 0,
+                                    "overflow": "hidden",
+                                    "padding": "0 8px",
+                                    "position": "absolute",
+                                    "right": 12,
+                                    "top": -10000,
+                                    "transition": "top 0ms cubic-bezier(0.23, 1, 0.32, 1) 450ms, transform 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms, opacity 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                                    "userSelect": "none",
+                                    "zIndex": 3000,
+                                  }
+                                }
+                              >
+                                <div
+                                  style={
+                                    Object {
+                                      "backgroundColor": "transparent",
+                                      "borderRadius": "50%",
+                                      "left": "100%",
+                                      "muiPrepared": true,
+                                      "position": "absolute",
+                                      "top": 0,
+                                      "transform": "translate(-50%, -50%)",
+                                      "transition": "width 0ms cubic-bezier(0.23, 1, 0.32, 1) 450ms, height 0ms cubic-bezier(0.23, 1, 0.32, 1) 450ms, backgroundColor 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                                    }
+                                  }
+                                />
+                                <span
+                                  style={
+                                    Object {
+                                      "muiPrepared": true,
+                                      "position": "relative",
+                                      "whiteSpace": "nowrap",
+                                    }
+                                  }
+                                >
+                                  Open on Github
+                                </span>
+                              </div>
+                            </Tooltip>
                             <ContentLink
                               key=".0"
                               style={Object {}}

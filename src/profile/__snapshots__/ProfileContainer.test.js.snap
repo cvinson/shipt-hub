@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Search renders correctly 1`] = `
+exports[`Profile renders correctly 1`] = `
 <div
-  className="searchContainer"
+  className="profileContainer"
 >
-  <Search
-    className="searchContainer"
+  <Profile
+    className="profileContainer"
     getUser={[Function]}
     getUserFollowers={[Function]}
     history={Object {}}

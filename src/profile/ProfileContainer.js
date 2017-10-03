@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Search from './Search';
+import Profile from './Profile';
 import { getUser, getUserFollowers } from '../services/api';
-import './Search.css';
+import './Profile.css';
 
-const SearchContainer = ({ history, match }) => {
+const ProfileContainer = ({ history, match }) => {
   return (
-    <div className="searchContainer">
-      <Search
-        className="searchContainer"
+    <div className="profileContainer">
+      <Profile
+        className="profileContainer"
         getUser={getUser}
         getUserFollowers={getUserFollowers}
         history={history}
@@ -17,9 +17,9 @@ const SearchContainer = ({ history, match }) => {
   );
 };
 
-SearchContainer.propTypes = {
+ProfileContainer.propTypes = {
   history: PropTypes.object.isRequired,
   match: PropTypes.object.isRequired
 }
 
-export default SearchContainer;
+export default ProfileContainer;

@@ -1,9 +1,9 @@
-.searchContainer {
+.profileContainer {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.search {
+.profile {
   max-width: 300px;
 }

@@ -3,12 +3,12 @@ import { mount, shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import { MemoryRouter } from 'react-router-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import Search from './Search';
+import Profile from './Profile';
 
 const TestWrapper = ({ getUserProp, getUserFollowersProp, username }) => (
   <MemoryRouter>
     <MuiThemeProvider>
-      <Search
+      <Profile
         username={username || 'githubUser'}
         getUser={getUserProp}
         getUserFollowers={getUserFollowersProp}
@@ -17,7 +17,7 @@ const TestWrapper = ({ getUserProp, getUserFollowersProp, username }) => (
   </MemoryRouter>
 );
 
-describe('Search', () => {
+describe('Profile', () => {
   let getUser, getUserProp, getUserFollowers, getUserFollowersProp;
 
   beforeEach(() => {
@@ -29,7 +29,7 @@ describe('Search', () => {
 
   it('renders correctly', () => {
     const wrapper = shallow(
-      <Search
+      <Profile
         username="githubUser"
         getUser={getUserProp}
         getUserFollowers={getUserFollowersProp}

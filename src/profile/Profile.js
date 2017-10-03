@@ -8,7 +8,7 @@ import User from '../user/User';
 
 const PAGE_SIZE = 30;
 
-class Search extends Component {
+class Profile extends Component {
   static propTypes = {
     getUser: PropTypes.func.isRequired,
     getUserFollowers: PropTypes.func.isRequired,
@@ -69,7 +69,7 @@ class Search extends Component {
     }
 
     return (
-      <Paper className="search">
+      <Paper className="profile">
         <User {...this.state.user} />
         <InfiniteLoader
           isRowLoaded={this.isRowLoaded}
@@ -92,4 +92,4 @@ class Search extends Component {
   }
 }
 
-export default Search;
+export default Profile;
