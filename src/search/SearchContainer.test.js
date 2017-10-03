@@ -5,7 +5,9 @@ import SearchContainer from './SearchContainer';
 
 describe('Search', () => {
   it('renders correctly', () => {
-    const wrapper = shallow(<SearchContainer match={{ params: { username: 'githubUser' } }} />);
+    const wrapper = shallow(
+      <SearchContainer history={{}} match={{ params: { username: 'githubUser' } }} />
+    );
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 });

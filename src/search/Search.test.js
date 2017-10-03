@@ -11,7 +11,8 @@ const TestWrapper = ({ getUserProp, getUserFollowersProp, username }) => (
       <Search
         username={username || 'githubUser'}
         getUser={getUserProp}
-        getUserFollowers={getUserFollowersProp} />
+        getUserFollowers={getUserFollowersProp}
+        history={{}} />
     </MuiThemeProvider>
   </MemoryRouter>
 );
@@ -31,7 +32,8 @@ describe('Search', () => {
       <Search
         username="githubUser"
         getUser={getUserProp}
-        getUserFollowers={getUserFollowersProp} />
+        getUserFollowers={getUserFollowersProp}
+        history={{}} />
     );
 
     expect(toJson(wrapper)).toMatchSnapshot();

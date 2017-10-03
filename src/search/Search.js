@@ -12,6 +12,7 @@ class Search extends Component {
   static propTypes = {
     getUser: PropTypes.func.isRequired,
     getUserFollowers: PropTypes.func.isRequired,
+    history: PropTypes.object.isRequired,
     username: PropTypes.string.isRequired
   }
 
@@ -48,12 +49,19 @@ class Search extends Component {
     this.setState({ followers: [...this.state.followers, ...additionalFollowers] });
   }
 
-  rowRenderer = ({ key, index, isScrolling, isVisible, style }) => (
-    <Follower
-      key={key}
-      style={style}
-      {...this.state.followers[index]} />
-  );
+  rowRenderer = ({ key, index, isScrolling, isVisible, style }) => {
+    const follower = this.state.followers[index];
+    const onClick = () => this.props.history.push(`/${follower.login}`);
+    const onLinkClick = () => window.location = `https://github.com/${follower.login}`;
+    return (
+      <Follower
+        key={key}
+        onClick={onClick}
+        onLinkClick={onLinkClick}
+        style={style}
+        {...follower} />
+    )
+  };
 
   render() {
     if (!this.state.user) {
