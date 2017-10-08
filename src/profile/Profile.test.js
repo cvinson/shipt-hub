@@ -12,7 +12,7 @@ const TestWrapper = ({ getUserProp, getUserFollowersProp, username }) => (
         username={username || 'githubUser'}
         getUser={getUserProp}
         getUserFollowers={getUserFollowersProp}
-        history={{}} />
+        history={{ push: [].push }} />
     </MuiThemeProvider>
   </MemoryRouter>
 );
@@ -85,6 +85,26 @@ describe('Profile', () => {
     await Promise.all([getUser, getUserFollowers]);
 
     expect(getUserFollowersProp).toHaveBeenLastCalledWith('githubUser', 2);
+  });
+
+  describe('onClick', () => {
+    it('pushes the follower\'s url into the history', () => {
+      const wrapper = mount(<TestWrapper getUserProp={getUserProp} getUserFollowersProp={getUserFollowersProp} />);
+      const profile = wrapper.find(Profile).instance();
+      const onClick = profile.onClick({ login: 'aGithubUser' });
+      expect(profile.props.history.length).toBeUndefined();
+      onClick();
+      expect(profile.props.history[0]).toEqual('/aGithubUser');
+    });
+  });
+
+  describe('onLinkClick', () => {
+    it('changes the window location to the correct github url', () => {
+      window.location.assign = jest.fn();
+      const wrapper = mount(<TestWrapper getUserProp={getUserProp} getUserFollowersProp={getUserFollowersProp} />);
+      wrapper.find(Profile).instance().onLinkClick({ login: 'aGithubUser' })();
+      expect(window.location.assign).toHaveBeenLastCalledWith('https://github.com/aGithubUser');
+    });
   });
 
   afterEach(() => {

@@ -43,6 +43,10 @@ class Profile extends Component {
 
   isRowLoaded = ({ index }) => index < this.state.followers.length;
 
+  onClick = (follower) => () => this.props.history.push(`/${follower.login}`);
+
+  onLinkClick = (follower) => () => window.location.assign(`https://github.com/${follower.login}`);
+
   loadMoreRows = async ({ startIndex, stopIndex }) => {
     const nextPage = Math.ceil(this.state.followers.length / PAGE_SIZE) + 1;
     const additionalFollowers = await this.props.getUserFollowers(this.props.username, nextPage);
@@ -51,13 +55,11 @@ class Profile extends Component {
 
   rowRenderer = ({ key, index, isScrolling, isVisible, style }) => {
     const follower = this.state.followers[index];
-    const onClick = () => this.props.history.push(`/${follower.login}`);
-    const onLinkClick = () => window.location = `https://github.com/${follower.login}`;
     return (
       <Follower
         key={key}
-        onClick={onClick}
-        onLinkClick={onLinkClick}
+        onClick={this.onClick(follower)}
+        onLinkClick={this.onLinkClick(follower)}
         style={style}
         {...follower} />
     )
