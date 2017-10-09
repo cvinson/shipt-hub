@@ -34,6 +34,7 @@ export default class Search extends React.Component {
     return (
       <div>
         <TextField
+          defaultValue={this.props.username}
           hintText="Search for a Github user"
           id="search-text"
           onChange={this.onChange}

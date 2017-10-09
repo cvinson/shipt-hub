@@ -2,7 +2,7 @@ const API_BASE_URL = 'https://api.github.com/';
 
 function checkStatus(response) {
   if (response.ok) return response;
-  throw new Error(response);
+  throw new Error(response.status);
 }
 
 function getHeaders() {

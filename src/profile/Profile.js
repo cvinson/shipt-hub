@@ -20,16 +20,28 @@ class Profile extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      error: null,
       followers: null,
       user: null
     };
   }
 
   fetchUserData = async (username) => {
-    this.setState({
-      followers: await this.props.getUserFollowers(username),
-      user: await this.props.getUser(username)
-    });
+    try {
+      this.setState({
+        error: null,
+        followers: await this.props.getUserFollowers(username),
+        user: await this.props.getUser(username)
+      });
+    } catch (err) {
+      switch (err.message) {
+        case '403':
+          this.setState({ error: 'rateLimit' });
+          break;
+        default:
+          this.setState({ error: 'notFound' });
+      }
+    }
   }
 
   componentDidMount() {
@@ -68,6 +80,19 @@ class Profile extends Component {
 
   render() {
     if (!this.state.user) {
+      if (this.state.error) {
+        if (this.state.error === 'rateLimit') {
+          return (
+            <Paper className="errorContainer" zDepth={2}>
+              <h3>{'Oh No! We\'ve been rate limited!'}</h3>
+              <p>{'Please try again in a few minutes.'}</p>
+            </Paper>
+          );
+        }
+
+        return <Search username={this.props.username} />
+      }
+
       return <CircularProgress size={80} />;
     }
 

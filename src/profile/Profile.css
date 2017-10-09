@@ -7,3 +7,8 @@
 .profile {
   max-width: 300px;
 }
+
+.errorContainer {
+  padding: 15px;
+  text-align: center;
+}
