@@ -4,6 +4,7 @@ import { InfiniteLoader, List } from 'react-virtualized';
 import CircularProgress from 'material-ui/CircularProgress';
 import Paper from 'material-ui/Paper';
 import Follower from '../follower/Follower';
+import Search from '../search/Search';
 import User from '../user/User';
 
 const PAGE_SIZE = 30;
@@ -71,25 +72,28 @@ class Profile extends Component {
     }
 
     return (
-      <Paper className="profile">
-        <User {...this.state.user} />
-        <InfiniteLoader
-          isRowLoaded={this.isRowLoaded}
-          loadMoreRows={this.loadMoreRows}
-          minimumBatchSize={PAGE_SIZE}
-          rowCount={this.state.user.followers}>
-          {({ onRowsRendered, registerChild }) => (
-            <List
-              height={300}
-              width={300}
-              onRowsRendered={onRowsRendered}
-              ref={registerChild}
-              rowCount={this.state.followers.length}
-              rowHeight={56}
-              rowRenderer={this.rowRenderer} />
-          )}
-        </InfiniteLoader>
-      </Paper>
+      <div>
+        <Search username={this.props.username} />
+        <Paper className="profile">
+          <User {...this.state.user} />
+          <InfiniteLoader
+            isRowLoaded={this.isRowLoaded}
+            loadMoreRows={this.loadMoreRows}
+            minimumBatchSize={PAGE_SIZE}
+            rowCount={this.state.user.followers}>
+            {({ onRowsRendered, registerChild }) => (
+              <List
+                height={300}
+                width={300}
+                onRowsRendered={onRowsRendered}
+                ref={registerChild}
+                rowCount={this.state.followers.length}
+                rowHeight={56}
+                rowRenderer={this.rowRenderer} />
+            )}
+          </InfiniteLoader>
+        </Paper>
+      </div>
     );
   }
 }
