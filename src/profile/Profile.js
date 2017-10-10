@@ -36,10 +36,10 @@ class Profile extends Component {
     } catch (err) {
       switch (err.message) {
         case '403':
-          this.setState({ error: 'rateLimit' });
+          this.setState({ error: 'rateLimit', followers: null, user: null });
           break;
         default:
-          this.setState({ error: 'notFound' });
+          this.setState({ error: 'notFound', followers: null, user: null });
       }
     }
   }
@@ -79,22 +79,35 @@ class Profile extends Component {
   };
 
   render() {
-    if (!this.state.user) {
-      if (this.state.error) {
-        if (this.state.error === 'rateLimit') {
-          return (
-            <Paper className="errorContainer" zDepth={2}>
-              <h3>{'Oh No! We\'ve been rate limited!'}</h3>
-              <p>{'Please try again in a few minutes.'}</p>
-            </Paper>
-          );
-        }
+    if (this.state.error) {
+      let errorContent = (
+        <div>
+          <h3>
+            {'Oh no! We couldn\'t find'}
+            <span className="highlightUsername">{this.props.username}</span>
+          </h3>
+          <p>{'Please update your search and try again.'}</p>
+        </div>
+      );
 
-        return <Search username={this.props.username} />
+      if (this.state.error === 'rateLimit') {
+        errorContent = (
+          <div>
+            <h3>{'Oh no! We\'ve been rate limited!'}</h3>
+            <p>{'Please try again in a few minutes.'}</p>
+          </div>
+        )
       }
 
-      return <CircularProgress size={80} />;
+      return (
+        <div>
+          <Search username={this.props.username} />
+          <Paper className="errorContainer" zDepth={2}>{errorContent}</Paper>
+        </div>
+      );
     }
+
+    if (!this.state.user) return <CircularProgress size={80} />;
 
     return (
       <div>

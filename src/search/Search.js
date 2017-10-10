@@ -18,6 +18,10 @@ export default class Search extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     this.setState({ redirect: false });
+
+    if (this.props.username !== nextProps.username) {
+      this.setState({ text: nextProps.username });
+    }
   }
 
   onChange = (event, text) => {
@@ -34,11 +38,11 @@ export default class Search extends React.Component {
     return (
       <div>
         <TextField
-          defaultValue={this.props.username}
           hintText="Search for a Github user"
           id="search-text"
           onChange={this.onChange}
-          onKeyPress={this.onKeyPress} />
+          onKeyPress={this.onKeyPress}
+          value={this.state.text} />
         {this.state.redirect &&
           <Redirect to={{ pathname: `/${this.state.text}`, state: { from: this.props.location } }} />
         }

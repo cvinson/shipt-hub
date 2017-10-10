@@ -13,6 +13,11 @@ exports[`<App /> renders correctly 1`] = `
       />
       <Route
         component={[Function]}
+        exact={true}
+        path="/"
+      />
+      <Route
+        component={[Function]}
         path="/:username"
       />
     </div>

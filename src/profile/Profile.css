@@ -12,3 +12,8 @@
   padding: 15px;
   text-align: center;
 }
+
+.highlightUsername {
+  font-weight: normal;
+  margin-left: 5px;
+}
