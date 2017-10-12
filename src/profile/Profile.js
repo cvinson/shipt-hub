@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { InfiniteLoader, List } from 'react-virtualized';
 import CircularProgress from 'material-ui/CircularProgress';
 import Paper from 'material-ui/Paper';
 import ProfileError from './ProfileError';
-import Follower from '../follower/Follower';
+import Followers from '../followers/Followers';
 import Search from '../search/Search';
 import User from '../user/User';
 
@@ -55,29 +54,11 @@ class Profile extends Component {
     }
   }
 
-  isRowLoaded = ({ index }) => index < this.state.followers.length;
-
-  onClick = (follower) => () => this.props.history.push(`/${follower.login}`);
-
-  onLinkClick = (follower) => () => window.location.assign(`https://github.com/${follower.login}`);
-
-  loadMoreRows = async ({ startIndex, stopIndex }) => {
+  loadMoreFollowers = async ({ startIndex, stopIndex }) => {
     const nextPage = Math.ceil(this.state.followers.length / PAGE_SIZE) + 1;
     const additionalFollowers = await this.props.getUserFollowers(this.props.username, nextPage);
     this.setState({ followers: [...this.state.followers, ...additionalFollowers] });
   }
-
-  rowRenderer = ({ key, index, isScrolling, isVisible, style }) => {
-    const follower = this.state.followers[index];
-    return (
-      <Follower
-        key={key}
-        onClick={this.onClick(follower)}
-        onLinkClick={this.onLinkClick(follower)}
-        style={style}
-        {...follower} />
-    )
-  };
 
   render() {
     if (this.state.error) return (
@@ -94,22 +75,12 @@ class Profile extends Component {
         <Search username={this.props.username} />
         <Paper className="profile">
           <User {...this.state.user} />
-          <InfiniteLoader
-            isRowLoaded={this.isRowLoaded}
-            loadMoreRows={this.loadMoreRows}
-            minimumBatchSize={PAGE_SIZE}
-            rowCount={this.state.user.followers}>
-            {({ onRowsRendered, registerChild }) => (
-              <List
-                height={300}
-                width={300}
-                onRowsRendered={onRowsRendered}
-                ref={registerChild}
-                rowCount={this.state.followers.length}
-                rowHeight={56}
-                rowRenderer={this.rowRenderer} />
-            )}
-          </InfiniteLoader>
+          <Followers
+            followers={this.state.followers}
+            history={this.props.history}
+            loadMoreFollowers={this.loadMoreFollowers}
+            pageSize={PAGE_SIZE}
+            totalFollowers={this.state.user.followers} />
         </Paper>
       </div>
     );

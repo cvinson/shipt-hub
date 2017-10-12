@@ -34,7 +34,7 @@ const ProfileError = ({ errorType }) => {
 };
 
 ProfileError.propTypes = {
-  errorType: PropTypes.string.isRequired
+  errorType: PropTypes.string
 };
 
 export default ProfileError;
