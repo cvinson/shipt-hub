@@ -1,0 +1,569 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Followers /> renders correctly 1`] = `
+<Followers
+  followers={
+    Array [
+      Object {
+        "avatar_url": "anotherAvatarUrl",
+        "login": "anotherGithubUser",
+      },
+    ]
+  }
+  history={
+    Object {
+      "push": [Function],
+    }
+  }
+  loadMoreFollowers={[Function]}
+  pageSize={10}
+  totalFollowers={30}
+>
+  <InfiniteLoader
+    isRowLoaded={[Function]}
+    loadMoreRows={[Function]}
+    minimumBatchSize={10}
+    rowCount={30}
+    threshold={15}
+  >
+    <List
+      autoHeight={false}
+      estimatedRowSize={30}
+      height={300}
+      noRowsRenderer={[Function]}
+      onRowsRendered={[Function]}
+      onScroll={[Function]}
+      overscanIndicesGetter={[Function]}
+      overscanRowCount={10}
+      rowCount={1}
+      rowHeight={56}
+      rowRenderer={[Function]}
+      scrollToAlignment="auto"
+      scrollToIndex={-1}
+      style={Object {}}
+      width={300}
+    >
+      <Grid
+        aria-label="grid"
+        aria-readonly={true}
+        autoContainerWidth={true}
+        autoHeight={false}
+        autoWidth={false}
+        cellRangeRenderer={[Function]}
+        cellRenderer={[Function]}
+        className="ReactVirtualized__List"
+        columnCount={1}
+        columnWidth={300}
+        containerRole="rowgroup"
+        containerStyle={Object {}}
+        estimatedColumnSize={100}
+        estimatedRowSize={30}
+        getScrollbarSize={[Function]}
+        height={300}
+        noContentRenderer={[Function]}
+        noRowsRenderer={[Function]}
+        onRowsRendered={[Function]}
+        onScroll={[Function]}
+        onScrollbarPresenceChange={[Function]}
+        onSectionRendered={[Function]}
+        overscanColumnCount={0}
+        overscanIndicesGetter={[Function]}
+        overscanRowCount={10}
+        role="grid"
+        rowCount={1}
+        rowHeight={56}
+        rowRenderer={[Function]}
+        scrollToAlignment="auto"
+        scrollToColumn={-1}
+        scrollToIndex={-1}
+        scrollToRow={-1}
+        scrollingResetTimeInterval={150}
+        style={Object {}}
+        tabIndex={0}
+        width={300}
+      >
+        <div
+          aria-label="grid"
+          aria-readonly={true}
+          className="ReactVirtualized__Grid ReactVirtualized__List"
+          id={undefined}
+          onScroll={[Function]}
+          role="grid"
+          style={
+            Object {
+              "WebkitOverflowScrolling": "touch",
+              "boxSizing": "border-box",
+              "direction": "ltr",
+              "height": 300,
+              "overflowX": "hidden",
+              "overflowY": "hidden",
+              "position": "relative",
+              "width": 300,
+              "willChange": "transform",
+            }
+          }
+          tabIndex={0}
+        >
+          <div
+            className="ReactVirtualized__Grid__innerScrollContainer"
+            role="rowgroup"
+            style={
+              Object {
+                "height": 56,
+                "maxHeight": 56,
+                "maxWidth": 300,
+                "overflow": "hidden",
+                "pointerEvents": "",
+                "position": "relative",
+                "width": "auto",
+              }
+            }
+          >
+            <Follower
+              avatar_url="anotherAvatarUrl"
+              key="0-0"
+              login="anotherGithubUser"
+              onClick={[Function]}
+              onLinkClick={[Function]}
+              style={
+                Object {
+                  "height": 56,
+                  "left": 0,
+                  "position": "absolute",
+                  "top": 0,
+                  "width": "100%",
+                }
+              }
+            >
+              <ListItem
+                autoGenerateNestedIndicator={true}
+                className="follower"
+                containerElement="span"
+                disableKeyboardFocus={false}
+                disabled={false}
+                initiallyOpen={false}
+                insetChildren={false}
+                leftAvatar={
+                  <Avatar
+                    size={40}
+                    src="anotherAvatarUrl"
+                  />
+                }
+                nestedItems={Array []}
+                nestedLevel={0}
+                onClick={[Function]}
+                onKeyboardFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onNestedListToggle={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                open={null}
+                primaryText="anotherGithubUser"
+                primaryTogglesNestedList={false}
+                rightIconButton={
+                  <IconButton
+                    disableTouchRipple={false}
+                    disabled={false}
+                    iconStyle={Object {}}
+                    onClick={[Function]}
+                    tooltip="Open on Github"
+                    tooltipPosition="bottom-left"
+                    touch={false}
+                  >
+                    <ContentLink />
+                  </IconButton>
+                }
+                secondaryTextLines={1}
+                style={
+                  Object {
+                    "height": 56,
+                    "left": 0,
+                    "position": "absolute",
+                    "top": 0,
+                    "width": "100%",
+                  }
+                }
+              >
+                <div>
+                  <EnhancedButton
+                    className="follower"
+                    containerElement="span"
+                    disableKeyboardFocus={false}
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onKeyboardFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchStart={[Function]}
+                    open={null}
+                    style={
+                      Object {
+                        "backgroundColor": null,
+                        "color": "rgba(0, 0, 0, 0.87)",
+                        "display": "block",
+                        "fontSize": 16,
+                        "height": 56,
+                        "left": 0,
+                        "lineHeight": "16px",
+                        "position": "absolute",
+                        "top": 0,
+                        "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                        "width": "100%",
+                      }
+                    }
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <span
+                      className="follower"
+                      disabled={false}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyUp={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onTouchEnd={[Function]}
+                      onTouchStart={[Function]}
+                      open={null}
+                      style={
+                        Object {
+                          "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                          "background": "none",
+                          "backgroundColor": null,
+                          "border": 10,
+                          "boxSizing": "border-box",
+                          "color": "rgba(0, 0, 0, 0.87)",
+                          "cursor": "pointer",
+                          "display": "block",
+                          "fontFamily": "Roboto, sans-serif",
+                          "fontSize": 16,
+                          "fontWeight": "inherit",
+                          "height": 56,
+                          "left": 0,
+                          "lineHeight": "16px",
+                          "margin": 0,
+                          "muiPrepared": true,
+                          "outline": "none",
+                          "padding": 0,
+                          "position": "absolute",
+                          "textDecoration": "none",
+                          "top": 0,
+                          "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                          "verticalAlign": null,
+                          "width": "100%",
+                          "zIndex": 1,
+                        }
+                      }
+                      tabIndex={0}
+                    >
+                      <TouchRipple
+                        abortOnScroll={true}
+                        centerRipple={undefined}
+                        color={undefined}
+                        key="touchRipple"
+                        opacity={undefined}
+                      >
+                        <div
+                          onMouseDown={[Function]}
+                          onMouseLeave={[Function]}
+                          onMouseUp={[Function]}
+                          onTouchEnd={[Function]}
+                          onTouchStart={[Function]}
+                        >
+                          <div
+                            style={
+                              Object {
+                                "marginLeft": 0,
+                                "muiPrepared": true,
+                                "paddingBottom": 20,
+                                "paddingLeft": 72,
+                                "paddingRight": 56,
+                                "paddingTop": 20,
+                                "position": "relative",
+                              }
+                            }
+                          >
+                            <Avatar
+                              key="1"
+                              size={40}
+                              src="anotherAvatarUrl"
+                              style={
+                                Object {
+                                  "left": 16,
+                                  "position": "absolute",
+                                  "top": 8,
+                                }
+                              }
+                            >
+                              <img
+                                className={undefined}
+                                size={40}
+                                src="anotherAvatarUrl"
+                                style={
+                                  Object {
+                                    "alignItems": "center",
+                                    "backgroundColor": "rgb(188, 188, 188)",
+                                    "borderRadius": "50%",
+                                    "color": "#ffffff",
+                                    "display": "inline-flex",
+                                    "fontSize": 20,
+                                    "height": 40,
+                                    "justifyContent": "center",
+                                    "left": 16,
+                                    "muiPrepared": true,
+                                    "position": "absolute",
+                                    "top": 8,
+                                    "userSelect": "none",
+                                    "width": 40,
+                                  }
+                                }
+                              />
+                            </Avatar>
+                            <IconButton
+                              disableTouchRipple={false}
+                              disabled={false}
+                              iconStyle={Object {}}
+                              key="2"
+                              onClick={[Function]}
+                              onKeyboardFocus={[Function]}
+                              onMouseDown={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                              onMouseUp={[Function]}
+                              style={
+                                Object {
+                                  "display": "block",
+                                  "position": "absolute",
+                                  "right": 4,
+                                  "top": 4,
+                                }
+                              }
+                              tooltip="Open on Github"
+                              tooltipPosition="bottom-left"
+                              touch={false}
+                            >
+                              <EnhancedButton
+                                centerRipple={true}
+                                containerElement="button"
+                                disableTouchRipple={false}
+                                disabled={false}
+                                onBlur={[Function]}
+                                onClick={[Function]}
+                                onFocus={[Function]}
+                                onKeyDown={[Function]}
+                                onKeyUp={[Function]}
+                                onKeyboardFocus={[Function]}
+                                onMouseDown={[Function]}
+                                onMouseEnter={[Function]}
+                                onMouseLeave={[Function]}
+                                onMouseOut={[Function]}
+                                onMouseUp={[Function]}
+                                onTouchStart={[Function]}
+                                style={
+                                  Object {
+                                    "boxSizing": "border-box",
+                                    "display": "block",
+                                    "fontSize": 0,
+                                    "height": 48,
+                                    "overflow": "visible",
+                                    "padding": 12,
+                                    "position": "absolute",
+                                    "right": 4,
+                                    "top": 4,
+                                    "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                                    "width": 48,
+                                  }
+                                }
+                                tabIndex={0}
+                                type="button"
+                              >
+                                <button
+                                  disabled={false}
+                                  onBlur={[Function]}
+                                  onClick={[Function]}
+                                  onFocus={[Function]}
+                                  onKeyDown={[Function]}
+                                  onKeyUp={[Function]}
+                                  onMouseDown={[Function]}
+                                  onMouseEnter={[Function]}
+                                  onMouseLeave={[Function]}
+                                  onMouseOut={[Function]}
+                                  onMouseUp={[Function]}
+                                  onTouchStart={[Function]}
+                                  style={
+                                    Object {
+                                      "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                                      "background": "none",
+                                      "border": 10,
+                                      "boxSizing": "border-box",
+                                      "cursor": "pointer",
+                                      "display": "block",
+                                      "fontFamily": "Roboto, sans-serif",
+                                      "fontSize": 0,
+                                      "fontWeight": "inherit",
+                                      "height": 48,
+                                      "margin": 0,
+                                      "muiPrepared": true,
+                                      "outline": "none",
+                                      "overflow": "visible",
+                                      "padding": 12,
+                                      "position": "absolute",
+                                      "right": 4,
+                                      "textDecoration": "none",
+                                      "top": 4,
+                                      "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                                      "verticalAlign": null,
+                                      "width": 48,
+                                      "zIndex": 1,
+                                    }
+                                  }
+                                  tabIndex={0}
+                                  type="button"
+                                >
+                                  <TouchRipple
+                                    abortOnScroll={true}
+                                    centerRipple={true}
+                                    color={undefined}
+                                    key="touchRipple"
+                                    opacity={undefined}
+                                  >
+                                    <div
+                                      onMouseDown={[Function]}
+                                      onMouseLeave={[Function]}
+                                      onMouseUp={[Function]}
+                                      onTouchEnd={[Function]}
+                                      onTouchStart={[Function]}
+                                    >
+                                      <Tooltip
+                                        horizontalPosition="left"
+                                        label="Open on Github"
+                                        show={false}
+                                        style={
+                                          Object {
+                                            "boxSizing": "border-box",
+                                          }
+                                        }
+                                        touch={false}
+                                        verticalPosition="bottom"
+                                      >
+                                        <div
+                                          style={
+                                            Object {
+                                              "borderRadius": 2,
+                                              "boxSizing": "border-box",
+                                              "color": "#ffffff",
+                                              "fontFamily": "Roboto, sans-serif",
+                                              "fontSize": "10px",
+                                              "left": null,
+                                              "lineHeight": "22px",
+                                              "muiPrepared": true,
+                                              "opacity": 0,
+                                              "overflow": "hidden",
+                                              "padding": "0 8px",
+                                              "position": "absolute",
+                                              "right": 12,
+                                              "top": -10000,
+                                              "transition": "top 0ms cubic-bezier(0.23, 1, 0.32, 1) 450ms, transform 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms, opacity 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                                              "userSelect": "none",
+                                              "zIndex": 3000,
+                                            }
+                                          }
+                                        >
+                                          <div
+                                            style={
+                                              Object {
+                                                "backgroundColor": "transparent",
+                                                "borderRadius": "50%",
+                                                "left": "100%",
+                                                "muiPrepared": true,
+                                                "position": "absolute",
+                                                "top": 0,
+                                                "transform": "translate(-50%, -50%)",
+                                                "transition": "width 0ms cubic-bezier(0.23, 1, 0.32, 1) 450ms, height 0ms cubic-bezier(0.23, 1, 0.32, 1) 450ms, backgroundColor 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                                              }
+                                            }
+                                          />
+                                          <span
+                                            style={
+                                              Object {
+                                                "muiPrepared": true,
+                                                "position": "relative",
+                                                "whiteSpace": "nowrap",
+                                              }
+                                            }
+                                          >
+                                            Open on Github
+                                          </span>
+                                        </div>
+                                      </Tooltip>
+                                      <ContentLink
+                                        key=".0"
+                                        style={Object {}}
+                                      >
+                                        <SvgIcon
+                                          onMouseEnter={[Function]}
+                                          onMouseLeave={[Function]}
+                                          style={Object {}}
+                                          viewBox="0 0 24 24"
+                                        >
+                                          <svg
+                                            onMouseEnter={[Function]}
+                                            onMouseLeave={[Function]}
+                                            style={
+                                              Object {
+                                                "color": "rgba(0, 0, 0, 0.87)",
+                                                "display": "inline-block",
+                                                "fill": "currentColor",
+                                                "height": 24,
+                                                "muiPrepared": true,
+                                                "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                                                "userSelect": "none",
+                                                "width": 24,
+                                              }
+                                            }
+                                            viewBox="0 0 24 24"
+                                          >
+                                            <path
+                                              d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"
+                                            />
+                                          </svg>
+                                        </SvgIcon>
+                                      </ContentLink>
+                                    </div>
+                                  </TouchRipple>
+                                </button>
+                              </EnhancedButton>
+                            </IconButton>
+                            <div
+                              key="primaryText"
+                              style={
+                                Object {
+                                  "muiPrepared": true,
+                                }
+                              }
+                            >
+                              anotherGithubUser
+                            </div>
+                          </div>
+                        </div>
+                      </TouchRipple>
+                    </span>
+                  </EnhancedButton>
+                </div>
+              </ListItem>
+            </Follower>
+          </div>
+        </div>
+      </Grid>
+    </List>
+  </InfiniteLoader>
+</Followers>
+`;
