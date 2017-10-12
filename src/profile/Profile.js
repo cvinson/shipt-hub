@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { InfiniteLoader, List } from 'react-virtualized';
 import CircularProgress from 'material-ui/CircularProgress';
 import Paper from 'material-ui/Paper';
+import ProfileError from './ProfileError';
 import Follower from '../follower/Follower';
 import Search from '../search/Search';
 import User from '../user/User';
@@ -79,33 +80,12 @@ class Profile extends Component {
   };
 
   render() {
-    if (this.state.error) {
-      let errorContent = (
-        <div>
-          <h3>
-            {'Oh no! We couldn\'t find'}
-            <span className="highlightUsername">{this.props.username}</span>
-          </h3>
-          <p>{'Please update your search and try again.'}</p>
-        </div>
-      );
-
-      if (this.state.error === 'rateLimit') {
-        errorContent = (
-          <div>
-            <h3>{'Oh no! We\'ve been rate limited!'}</h3>
-            <p>{'Please try again in a few minutes.'}</p>
-          </div>
-        )
-      }
-
-      return (
-        <div>
-          <Search username={this.props.username} />
-          <Paper className="errorContainer" zDepth={2}>{errorContent}</Paper>
-        </div>
-      );
-    }
+    if (this.state.error) return (
+      <div>
+        <Search username={this.props.username} />
+        <ProfileError errorType={this.state.error} />
+      </div>
+    );
 
     if (!this.state.user) return <CircularProgress size={80} />;
 

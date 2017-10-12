@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ProfileError /> renders correctly 1`] = `
+<Paper
+  circle={false}
+  className="errorContainer"
+  rounded={true}
+  transitionEnabled={true}
+  zDepth={2}
+>
+  <h3>
+    Oh no! We've been rate limited!
+  </h3>
+  <p>
+    Please try again in a few minutes.
+  </p>
+</Paper>
+`;

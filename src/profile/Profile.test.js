@@ -1,9 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { mount, shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import { MemoryRouter } from 'react-router-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import Profile from './Profile';
+
+const renderOptions = {
+  context: { muiTheme: getMuiTheme() },
+  childContextTypes: { muiTheme: PropTypes.object }
+};
 
 const TestWrapper = ({ getUserProp, getUserFollowersProp, username }) => (
   <MemoryRouter>
@@ -85,6 +92,21 @@ describe('Profile', () => {
     await Promise.all([getUser, getUserFollowers]);
 
     expect(getUserFollowersProp).toHaveBeenLastCalledWith('githubUser', 2);
+  });
+
+  it('renders error correctly', async () => {
+    const wrapper = mount(
+      <Profile
+        username="githubUser"
+        getUser={getUserProp}
+        getUserFollowers={getUserFollowersProp}
+        history={{}} />,
+      renderOptions
+    );
+
+    await Promise.all([getUser, getUserFollowers]);
+    wrapper.setState({ error: 'rateLimit' });
+    expect(toJson(wrapper)).toMatchSnapshot();
   });
 
   describe('onClick', () => {
