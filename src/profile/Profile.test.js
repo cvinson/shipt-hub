@@ -93,6 +93,48 @@ describe('<Profile />', () => {
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 
+  it('sets the appropriate error state when user is not found', async () => {
+    getUser = Promise.reject({ message: '404' });
+    getUserProp = jest.fn(() => getUser);
+    const wrapper = mount(
+      <Profile
+        username="githubUser"
+        getUser={getUserProp}
+        getUserFollowers={getUserFollowersProp}
+        history={{}} />,
+      renderOptions
+    );
+
+    try {
+      await getUser;
+    } catch (err) {
+      process.nextTick(() => {
+        expect(wrapper.state(['error'])).toEqual('notFound');
+      });
+    }
+  });
+
+  it('sets the appropriate error state when we have been rate limited', async () => {
+    getUser = Promise.reject({ message: '403' });
+    getUserProp = jest.fn(() => getUser);
+    const wrapper = mount(
+      <Profile
+        username="githubUser"
+        getUser={getUserProp}
+        getUserFollowers={getUserFollowersProp}
+        history={{}} />,
+      renderOptions
+    );
+
+    try {
+      await getUser;
+    } catch (err) {
+      process.nextTick(() => {
+        expect(wrapper.state(['error'])).toEqual('rateLimit');
+      });
+    }
+  });
+
   describe('loadMoreFollowers()', () => {
     it('loads additional followers and concats them with existing followers', async () => {
       const wrapper = mount(
