@@ -24,7 +24,7 @@ const TestWrapper = ({ getUserProp, getUserFollowersProp, username }) => (
   </MemoryRouter>
 );
 
-describe('Profile', () => {
+describe('<Profile />', () => {
   let getUser, getUserProp, getUserFollowers, getUserFollowersProp;
 
   beforeEach(() => {
@@ -91,6 +91,22 @@ describe('Profile', () => {
     await Promise.all([getUser, getUserFollowers]);
     wrapper.setState({ error: 'rateLimit' });
     expect(toJson(wrapper)).toMatchSnapshot();
+  });
+
+  describe('loadMoreFollowers()', () => {
+    it('loads additional followers and concats them with existing followers', async () => {
+      const wrapper = mount(
+        <Profile
+          username="githubUser"
+          getUser={getUserProp}
+          getUserFollowers={getUserFollowersProp}
+          history={{}} />,
+        renderOptions
+      );
+      wrapper.setState({ followers: [] });
+      await wrapper.instance().loadMoreFollowers({ startIndex: 0, stopIndex: 10 });
+      expect(wrapper.state(['followers'])).toHaveLength(1);
+    })
   });
 
   afterEach(() => {
