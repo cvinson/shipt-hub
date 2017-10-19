@@ -2,6 +2,9 @@
   "name": "shipt-hub",
   "version": "0.1.0",
   "private": true,
+  "engines" : {
+    "node" : ">=8.4.0"
+  },
   "dependencies": {
     "fetch-mock": "^5.12.2",
     "material-ui": "^0.19.2",
