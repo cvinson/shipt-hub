@@ -2,10 +2,11 @@
   "name": "shipt-hub",
   "version": "0.1.0",
   "private": true,
-  "engines" : {
-    "node" : ">=8.4.0"
+  "engines": {
+    "node": ">=8.4.0"
   },
   "dependencies": {
+    "coveralls": "^3.0.0",
     "fetch-mock": "^5.12.2",
     "material-ui": "^0.19.2",
     "plur": "^2.1.2",
