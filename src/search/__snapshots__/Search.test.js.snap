@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Search /> renders a redirect when appropriate 1`] = `
+<div>
+  <TextField
+    disabled={false}
+    floatingLabelFixed={false}
+    fullWidth={false}
+    hintText="Search for a Github user"
+    id="search-text"
+    multiLine={false}
+    onChange={[Function]}
+    onKeyPress={[Function]}
+    rows={1}
+    type="text"
+    underlineShow={true}
+    value=""
+  />
+  <Redirect
+    push={false}
+    to={
+      Object {
+        "pathname": "/",
+        "state": Object {
+          "from": undefined,
+        },
+      }
+    }
+  />
+</div>
+`;
+
+exports[`<Search /> renders correctly 1`] = `
+<div>
+  <TextField
+    disabled={false}
+    floatingLabelFixed={false}
+    fullWidth={false}
+    hintText="Search for a Github user"
+    id="search-text"
+    multiLine={false}
+    onChange={[Function]}
+    onKeyPress={[Function]}
+    rows={1}
+    type="text"
+    underlineShow={true}
+    value=""
+  />
+</div>
+`;
