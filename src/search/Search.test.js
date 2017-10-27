@@ -37,6 +37,15 @@ describe('<Search />', () => {
     expect(wrapper.state(['redirect'])).toBe(true);
   });
 
+  it('updates redirect state when button is clicked', () => {
+    const wrapper = shallow(<Search username="githubUser" />, renderOptions);
+    const search = wrapper.instance();
+    wrapper.setState({ text: 'some text' });
+    search.onClick({});
+    expect(wrapper.state(['redirect'])).toBe(true);
+  });
+
+
   it('does not update redirect state when a non-Enter key is pressed', () => {
     const wrapper = shallow(<Search username="githubUser" />, renderOptions);
     const search = wrapper.instance();
