@@ -16,6 +16,29 @@ exports[`<Search /> renders a redirect when appropriate 1`] = `
     underlineShow={true}
     value=""
   />
+  <FlatButton
+    backgroundColor="#71b045"
+    disabled={false}
+    fullWidth={false}
+    hoverColor="#000000"
+    icon={<ActionSearch />}
+    labelPosition="after"
+    labelStyle={Object {}}
+    onClick={[Function]}
+    onKeyboardFocus={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    onTouchStart={[Function]}
+    primary={false}
+    secondary={false}
+    style={
+      Object {
+        "color": "#ffffff",
+        "marginLeft": "5px",
+        "minWidth": "40px",
+      }
+    }
+  />
   <Redirect
     push={false}
     to={
@@ -45,6 +68,29 @@ exports[`<Search /> renders correctly 1`] = `
     type="text"
     underlineShow={true}
     value=""
+  />
+  <FlatButton
+    backgroundColor="#71b045"
+    disabled={false}
+    fullWidth={false}
+    hoverColor="#000000"
+    icon={<ActionSearch />}
+    labelPosition="after"
+    labelStyle={Object {}}
+    onClick={[Function]}
+    onKeyboardFocus={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    onTouchStart={[Function]}
+    primary={false}
+    secondary={false}
+    style={
+      Object {
+        "color": "#ffffff",
+        "marginLeft": "5px",
+        "minWidth": "40px",
+      }
+    }
   />
 </div>
 `;

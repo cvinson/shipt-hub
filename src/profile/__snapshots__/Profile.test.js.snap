@@ -991,6 +991,178 @@ exports[`<Profile /> renders error correctly 1`] = `
             </TextFieldUnderline>
           </div>
         </TextField>
+        <FlatButton
+          backgroundColor="#71b045"
+          disabled={false}
+          fullWidth={false}
+          hoverColor="#000000"
+          icon={<ActionSearch />}
+          labelPosition="after"
+          labelStyle={Object {}}
+          onClick={[Function]}
+          onKeyboardFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          onTouchStart={[Function]}
+          primary={false}
+          secondary={false}
+          style={
+            Object {
+              "color": "#ffffff",
+              "marginLeft": "5px",
+              "minWidth": "40px",
+            }
+          }
+        >
+          <EnhancedButton
+            containerElement="button"
+            disabled={false}
+            focusRippleColor="#999999"
+            focusRippleOpacity={0.3}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onKeyboardFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            onTouchStart={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#71b045",
+                "borderRadius": 2,
+                "color": "#ffffff",
+                "height": 36,
+                "lineHeight": "36px",
+                "margin": 0,
+                "marginLeft": "5px",
+                "minWidth": "40px",
+                "overflow": "hidden",
+                "padding": 0,
+                "textAlign": "center",
+                "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                "userSelect": "none",
+              }
+            }
+            tabIndex={0}
+            touchRippleColor="#999999"
+            touchRippleOpacity={0.3}
+            type="button"
+          >
+            <button
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              onTouchStart={[Function]}
+              style={
+                Object {
+                  "WebkitTapHighlightColor": "rgba(0, 0, 0, 0)",
+                  "backgroundColor": "#71b045",
+                  "border": 10,
+                  "borderRadius": 2,
+                  "boxSizing": "border-box",
+                  "color": "#ffffff",
+                  "cursor": "pointer",
+                  "display": "inline-block",
+                  "fontFamily": "Roboto, sans-serif",
+                  "fontSize": "inherit",
+                  "fontWeight": "inherit",
+                  "height": 36,
+                  "lineHeight": "36px",
+                  "margin": 0,
+                  "marginLeft": "5px",
+                  "minWidth": "40px",
+                  "muiPrepared": true,
+                  "outline": "none",
+                  "overflow": "hidden",
+                  "padding": 0,
+                  "position": "relative",
+                  "textAlign": "center",
+                  "textDecoration": "none",
+                  "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                  "userSelect": "none",
+                  "verticalAlign": null,
+                  "zIndex": 1,
+                }
+              }
+              tabIndex={0}
+              type="button"
+            >
+              <TouchRipple
+                abortOnScroll={true}
+                centerRipple={undefined}
+                color="#999999"
+                key="touchRipple"
+                opacity={0.3}
+              >
+                <div
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                >
+                  <ActionSearch
+                    color="#ffffff"
+                    key="iconCloned"
+                    style={
+                      Object {
+                        "marginLeft": 0,
+                        "marginRight": 0,
+                        "verticalAlign": "middle",
+                      }
+                    }
+                  >
+                    <SvgIcon
+                      color="#ffffff"
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      style={
+                        Object {
+                          "marginLeft": 0,
+                          "marginRight": 0,
+                          "verticalAlign": "middle",
+                        }
+                      }
+                      viewBox="0 0 24 24"
+                    >
+                      <svg
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        style={
+                          Object {
+                            "color": "rgba(0, 0, 0, 0.87)",
+                            "display": "inline-block",
+                            "fill": "#ffffff",
+                            "height": 24,
+                            "marginLeft": 0,
+                            "marginRight": 0,
+                            "muiPrepared": true,
+                            "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+                            "userSelect": "none",
+                            "verticalAlign": "middle",
+                            "width": 24,
+                          }
+                        }
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                        />
+                      </svg>
+                    </SvgIcon>
+                  </ActionSearch>
+                </div>
+              </TouchRipple>
+            </button>
+          </EnhancedButton>
+        </FlatButton>
       </div>
     </Search>
     <ProfileError
