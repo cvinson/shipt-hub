@@ -9,7 +9,13 @@ exports[`<User /> correctly displays singular follower count 1`] = `
   <CardHeader
     avatar="anAvatarUrl"
     subtitle="1 Follower"
-    title="aGithubUser"
+    title={
+      <a
+        href="https://github.com/aGithubUser"
+      >
+        aGithubUser
+      </a>
+    }
   />
 </Card>
 `;
@@ -23,7 +29,13 @@ exports[`<User /> renders without crashing 1`] = `
   <CardHeader
     avatar="anAvatarUrl"
     subtitle="255 Followers"
-    title="aGithubUser"
+    title={
+      <a
+        href="https://github.com/aGithubUser"
+      >
+        aGithubUser
+      </a>
+    }
   />
 </Card>
 `;

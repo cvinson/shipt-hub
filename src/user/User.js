@@ -6,7 +6,7 @@ import plur from 'plur';
 const User = ({ avatar_url, followers, login }) => (
   <Card>
     <CardHeader
-      title={login}
+      title={<a href={`https://github.com/${login}`}>{login}</a>}
       subtitle={`${followers} ${plur('Follower', followers)}`}
       avatar={avatar_url} />
   </Card>
