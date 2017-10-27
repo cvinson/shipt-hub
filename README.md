@@ -34,7 +34,9 @@ Once generated, the coverage report can be found in `./coverage`, and can be vie
 ## Architectural Choices
 ShiptHub is broken down into several components, the outermost being the App. Based on the given route, either the Search component or the Profile component will be displayed. The Search component is reused inside the Profile component.
 
-The Profile component is wrapped with a ProfileContainer. I did this for 2 reasons; One was to accommodate the future implementation of a state container like Redux. Secondly, it made testing the component much simpler, since I could pass in the api service methods. The profile container also includes the `react-virtualized` component which only renders enough rows to display what is on the screen (plus a few more off screen to make scrolling look good). Scrolling near the end of the currently loaded rows automatically triggers the loading of a new page.
+The Profile component is wrapped with a ProfileContainer. I did this for 2 reasons; One was to accommodate the future implementation of a state container like Redux. Secondly, it made testing the component much simpler, since I could pass in the api service methods. If I were to make this project more robust, implementing a state container would be one of the first things I would do.
+
+The Profile container also includes the `react-virtualized` component which only renders enough rows to display what is on the screen (plus a few more off screen to make scrolling look good). Scrolling near the end of the currently loaded rows automatically triggers the loading of a new page.
 
 User and follower components are also broken out into their own components. A single instance of the user component is displayed at the top of the Profile component, and the Follower component is used in the row rendering method of the react-virtualized list.
 
